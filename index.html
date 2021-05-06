@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>  
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2021 NCAA Cross Country Simulator</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+        $( function() {
+          var availableStates = ["Alabama", "Alaska", "Arizona","Arkansas","California", "Colorado", 
+                                "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho",
+                                "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana",
+                                "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", 
+                                "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire",
+                                "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota",
+                                "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", 
+                                "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah",
+                                "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
+          ];
+          $( "#states" ).autocomplete({
+            source: availableStates
+          });
+        } );
+        </script>
+      </head>
+
+    <body class="class-for-index">
+        <div id="titleformat">
+            <h1>Welcome to the 2021 NCAA Cross Country Simulator!</h1>
+            <h1><strong>Race against the best runners in your region!</strong></h1>
+            <br>
+            <img id="imageformat" src="images/menXC.jpeg" width="800" height="400" alt="Panorama">
+            <br>
+            <h2 for="states">What state are you from? Enter below:</h2>
+            <form autocomplete="off" action="/scouting.html">
+                <div class="autocomplete" style="width:300px;">
+                  <input id="states" type="text" name="myState" placeholder="Your State">
+                </div>
+                <input type="submit">
+            </form>
+             <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br> <br>  <br>  <br>   
+
+        </div>
+    </body>
+</html>

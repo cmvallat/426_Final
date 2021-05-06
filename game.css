@@ -1,0 +1,155 @@
+.game
+{
+    width: 1250px;
+    height: 500px;
+    border: 1px solid black;
+    margin: auto;
+    cursor: url(images/guy_small.jpg) 25 15, auto;
+}
+
+
+#hill
+{
+    width: 140px;
+    height: 100px;
+    position: relative;
+    top: 356px;
+    left: 857px;
+
+    background-image: url(images/hill.jpg);
+    background-size: 140px 100px;
+    border-style: solid;
+    border-width: 3px;
+    
+    animation: hill 2s infinite linear alternate;
+}
+
+@keyframes hill 
+{
+    0% {left: 857px;}
+    100% {left: 0px;}
+}
+
+
+#opp
+{
+    width: 140px;
+    height: 100px;
+    position: relative;
+    top: 75px;
+    left: 850px;
+
+    background-image: url(images/guy_backwards.jpg);
+    background-size: 140px 100px;
+    border-style: solid;
+    border-width: 3px;
+
+    
+    animation: opp 1.5s linear alternate infinite;
+}
+
+@keyframes opp 
+{
+    0% {left: 850px;}
+    100% {left: 0px;}
+}
+
+#apple
+{
+    width: 50px;
+    height: 50px;
+    top: 40px;
+    left: 650px;
+    position: relative;
+
+    background-image: url(images/apple.jpg);
+    background-size: 50px 50px;
+    border-style: solid;
+    border-width: 3px;
+
+    animation: apple 0.5s linear alternate infinite;
+}
+
+@keyframes apple
+{
+    0% {top: -100px;}
+    100% {top: 230px;}
+
+}
+
+
+#peach
+{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: -150px;
+    left: 350px;
+
+    background-image: url(images/peach.jpg);
+    background-size: 50px 50px;
+    border-style: solid;
+    border-width: 3px;
+
+    animation: peach 1s ease alternate infinite;
+}
+
+@keyframes peach
+{
+    0% {top: -150px;}
+    100% {top: 180px;}
+}
+
+
+#shrub
+{
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    top: 96px;
+    left: 131px;
+    border-style: solid;
+    border-width: 3px;
+
+    background-image: url(images/leaves_reverse.jpg);
+    background-size: 500px 100px;
+    
+}
+
+#tree
+{
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    top: 96px;
+    left: 631px;
+    border-style: solid;
+    border-width: 3px;
+
+    background-image: url(images/leaves_reverse.jpg);
+    background-size: 500px 100px;
+    
+}
+
+#finish
+{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top: -96px;
+    left: 1050px;
+
+    background-image: url(images/finish.jpg);
+    background-size: 200px 200px;
+    
+}
+
+#follow {
+    /*cursor: url(http://placehold.it/50x30) 25 15, auto; */
+    position: absolute;
+    text-align: center;
+    border-style: solid;
+    border-width: 3px;
+    border-color: red;
+  }
+
