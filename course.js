@@ -1,4 +1,13 @@
 
+var paramsString = window.location.search;
+var searchParams = new URLSearchParams(paramsString);
+var State = "";
+
+for(var value of searchParams.values()) 
+{
+    State = value;
+}
+
 $(function()
 {
     //CALLING A WEATHER API FROM FREE CODE CAMP - MY ATTEMPT AT 20 API POINTS
@@ -12,6 +21,9 @@ $(function()
         type: "GET",
         success: function(result)
         {
+            //I would've put this further up in the code but it only works here for some reason
+            $("#st").html(State.toUpperCase());
+
             //convert to farenheit cause we love america
             var CtoF = 9 / 5;
             var F = ((result.main.temp * CtoF) + 32);
@@ -29,6 +41,5 @@ $(function()
             console.log(`Error ${error}`)
         }
     })
-    console.log(firebase)
 });
 
