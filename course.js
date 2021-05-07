@@ -11,7 +11,7 @@ $(function()
         type: "GET",
         //headers: {'Access-Control-Allow-Origin': '*'},
         success: function(result){
-        console.log("The temperature during today's race will be: " + result.name);
+        console.log("The temperature during in " + result.name + "will be: " + result.main.temp);
     },
     error: function(error)
     {
