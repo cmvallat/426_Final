@@ -29,5 +29,6 @@ $(function()
             console.log(`Error ${error}`)
         }
     })
+    console.log(firebase)
 });
 

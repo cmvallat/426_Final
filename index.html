@@ -10,6 +10,7 @@
         <!--<link rel="stylesheet" href="/resources/demos/style.css">-->
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type = "text/javascript" src = "functions/index.js"></script>
         <script>
         $( function() {
           var availableStates = ["Alabama", "Alaska", "Arizona","Arkansas","California", "Colorado", 
@@ -46,5 +47,42 @@
              <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br> <br>  <br>  <br>   
 
         </div>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAogoNhW6Xviae9I5KweXYgnKa8Ng0WrO8",
+    authDomain: "xcsimulator.firebaseapp.com",
+    databaseURL: "https://xcsimulator-default-rtdb.firebaseio.com",
+    projectId: "xcsimulator",
+    storageBucket: "xcsimulator.appspot.com",
+    messagingSenderId: "1043486474965",
+    appId: "1:1043486474965:web:132d74a95e1192bad4985c",
+    measurementId: "G-TSC41N7LVX"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  console.log("success");
+</script>
+
+<script>
+  db = firebase.firestore();
+  var Regions = db.collection('regions');
+  //var firstState = Regions.where();
+  //var good = firebase.firestore().collection.regions;
+  console.log(Regions);
+  console.log("success 2");
+</script>
+
     </body>
 </html>
