@@ -6,17 +6,57 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!--<script src = "https://cdnjs.cloudflare.com/ajax/libs/"></script>-->
-        <script type = "text/javascript" src="course.js"></script>
+        <!--<script type = "text/javascript" src="course.js"></script>-->
         <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'">-->
         <title>Scouting the Course</title>
     </head>
     <body class="class-for-page2">
+        
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+        <script type = "text/javascript" src="course.js"></script>
+        <!--
+        <script>
+          // Your web app's Firebase configuration
+          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+          var firebaseConfig = {
+            apiKey: "AIzaSyAogoNhW6Xviae9I5KweXYgnKa8Ng0WrO8",
+            authDomain: "xcsimulator.firebaseapp.com",
+            databaseURL: "https://xcsimulator-default-rtdb.firebaseio.com",
+            projectId: "xcsimulator",
+            storageBucket: "xcsimulator.appspot.com",
+            messagingSenderId: "1043486474965",
+            appId: "1:1043486474965:web:132d74a95e1192bad4985c",
+            measurementId: "G-TSC41N7LVX"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+          //console.log("success");
+        </script>
+        
+        <script>
+          db = firebase.firestore();
+          var Regions = db.collection('Regions');
+          //var firstState = db.doc('Regions/Mountain/States/')
+          //var good = firebase.firestore().collection.regions;
+          console.log(Regions);
+          //console.log("success 2");
+        </script>
+    -->
+        
         <div id="pagetwo">
             <h1>Time to scout the course!</h1>
             <h2> One of the most important aspects of competitive racing is preparation, which includes scouting the course you will be running. </h2>
             <h2>Since you are in </h2>
-            <h2 id="st">test code</h2>
-            <h2>you will be running the course at: COURSE </h2>
+            <h2 id="st"></h2>
+            <h2>you will be running the course at:</h2>
+            <h2 id="crse">COURSE HERE</h2>
             <h2>Have a quick look around:</h2>
             <br>
             <iframe

@@ -2,11 +2,41 @@
 var paramsString = window.location.search;
 var searchParams = new URLSearchParams(paramsString);
 var State = "";
+var CourseName;
+var Lat;
+var Long;
 
-for(var value of searchParams.values()) 
+var firebaseConfig = {
+    apiKey: "AIzaSyAogoNhW6Xviae9I5KweXYgnKa8Ng0WrO8",
+    authDomain: "xcsimulator.firebaseapp.com",
+    databaseURL: "https://xcsimulator-default-rtdb.firebaseio.com",
+    projectId: "xcsimulator",
+    storageBucket: "xcsimulator.appspot.com",
+    messagingSenderId: "1043486474965",
+    appId: "1:1043486474965:web:132d74a95e1192bad4985c",
+    measurementId: "G-TSC41N7LVX"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+$(function getState()
 {
-    State = value;
-}
+    for(var value of searchParams.values()) 
+    {
+        State = value;
+    }
+    $("#st").html(State.toUpperCase());
+    $("#crse").html("FUNCTION RAN");
+});
+
+$(function getCourse()
+{
+    db = firebase.firestore();
+    console.log(db);
+    //Lat = firebase.firestore().collections("Regions")
+});
 
 $(function()
 {
@@ -21,9 +51,6 @@ $(function()
         type: "GET",
         success: function(result)
         {
-            //I would've put this further up in the code but it only works here for some reason
-            $("#st").html(State.toUpperCase());
-
             //convert to farenheit cause we love america
             var CtoF = 9 / 5;
             var F = ((result.main.temp * CtoF) + 32);
@@ -42,4 +69,3 @@ $(function()
         }
     })
 });
-
