@@ -96,6 +96,10 @@
                     $("#crse").html(COURSES[z].toUpperCase());
                     lati = LAT[z];
                     longi = LONG[z];
+                    //var link = "https://www.google.com/maps/embed/v1/streetview?key=AIzaSyCGRpqvx7p2BirqPpxHjytmDFFCpAGm6lI&location=30.5863028,-95.3552942";
+                    //$("#MAP").attr('src', link)
+                    //window.location.reload();
+                    //window.location.reload();
                     console.log("in func lat is: " + lati);
                     console.log("in func long is: " + longi);
                     const URL = 'https://fcc-weather-api.glitch.me/api/current?lat=' + lati + '&lon=' + longi
@@ -122,7 +126,7 @@
                 console.log(`Error ${error}`)
             }
         })     
-        
+        /*
         const hospitalURL = 'https://trueway-places.p.rapidapi.com/FindPlacesNearby?location=' + lati + '%2C' + longi + '&language=en&radius=5000&type=hospital';
     $.ajax(
         {
@@ -145,14 +149,17 @@
                 console.log(response.results[0].distance);
             }
         });
-
+        */
                 }
             }
+           
+            
             
         });
         //matchStates();
         console.log("out of func lat: " + lati);
         console.log("out of func long: " + longi);
+        
 
     
     //FINDING THE NEAREST HOSPITAL VIA TRUE WAY PLACES API - ATTEMPT AT API 20 POINTS
@@ -180,3 +187,4 @@
             }
         });
     */
+   //window.location.reload();
