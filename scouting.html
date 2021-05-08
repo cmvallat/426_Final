@@ -5,51 +5,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <!--<script src="jquery-3.4.1.min.js"></script>-->
-        <!--<script src = "https://cdnjs.cloudflare.com/ajax/libs/"></script>-->
-        <!--<script type = "text/javascript" src="course.js"></script>-->
-        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'">-->
         <title>Race Preparation</title>
     </head>
     <body class="class-for-page2">
         
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <!-- Setting up Firebase -->
         <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-             https://firebase.google.com/docs/web/setup#available-libraries -->
         <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
         <script type = "text/javascript" src="course.js"></script>
-        <!--
-        <script>
-          // Your web app's Firebase configuration
-          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-          var firebaseConfig = {
-            apiKey: "AIzaSyAogoNhW6Xviae9I5KweXYgnKa8Ng0WrO8",
-            authDomain: "xcsimulator.firebaseapp.com",
-            databaseURL: "https://xcsimulator-default-rtdb.firebaseio.com",
-            projectId: "xcsimulator",
-            storageBucket: "xcsimulator.appspot.com",
-            messagingSenderId: "1043486474965",
-            appId: "1:1043486474965:web:132d74a95e1192bad4985c",
-            measurementId: "G-TSC41N7LVX"
-          };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig);
-          firebase.analytics();
-          //console.log("success");
-        </script>
-        
-        <script>
-          db = firebase.firestore();
-          var Regions = db.collection('Regions');
-          //var firstState = db.doc('Regions/Mountain/States/')
-          //var good = firebase.firestore().collection.regions;
-          console.log(Regions);
-          //console.log("success 2");
-        </script>
-    -->
         
         <div id="pagetwo">
             <h1>Time to prepare!</h1>
@@ -61,35 +25,40 @@
             <h2 id="crse" class="header">COURSE NAME</h2>
             <h2>Have a quick look around:</h2>
             <br>
+
             <iframe
                 width="700"
                 height="450"
                 frameborder="20" style="border:0"
                 src="https://www.google.com/maps/embed/v1/streetview?key=AIzaSyCGRpqvx7p2BirqPpxHjytmDFFCpAGm6lI&location=40.5863028,-75.3552942" 
                 allowfullscreen>
-             </iframe>
-            
-             <!-- NEARBY SEARCH URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyAVa4Y29aYOjbRE6VUPaiWrxcGTjjANAZM&location=40.5863028,-75.3552942&radius=50&type=hospital" -->
-             
+             </iframe>             
              
              <br> <br>
+
              <h2>Weather is another big factor that can affect a race. It's always smart to check ahead of time.</h2>
              <h2>On race day:</h2>
              <h2 id="formone" class="header">TEMP </h2>
              <h2 id="formtwo" class="header">CLOUDS </h2>
              <h2 id="formthree" class="header">WIND </h2>
+
              <br>
+
              <h2>Unfortunately, runners sometimes get hurt during a race. Be prepared for the worst.</h2>
              <h2>In case of injury, the nearest hospital is:</h2>
              <h2 id="nearest" class="header">HOSPITAL</h2>
              <h2 id="dist" class="header">METERS</h2>
              <img src="images/hospital.png" class="image">
+
              <br> <br> <br>
-             <a href="race.html"><button href="race.html" target="_self" class="button">Click to start the race!</button></a>
-             <br> <br>
-             <a href="index.html"><button target="_self" class="button">Or start over in a different state...</button></a>
-             <br>
              
+             <a href="race.html"><button href="race.html" target="_self" class="button">Click to start the race!</button></a>
+             
+             <br> <br>
+             
+             <a href="index.html"><button target="_self" class="button">Or start over in a different state...</button></a>
+             
+             <br>
 
         </div>
 

@@ -1,4 +1,3 @@
-//import { each } from "jquery";
 
 var paramsString = window.location.search;
 var searchParams = new URLSearchParams(paramsString);
@@ -23,6 +22,7 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 
+//get the State the user selected from the previous html page
 $(function getState()
 {
     for(var value of searchParams.values()) 
@@ -30,7 +30,6 @@ $(function getState()
         State = value;
         $("#st").html(State.toUpperCase());
     }
-    
 });
 
 
@@ -92,13 +91,14 @@ $(function getState()
 
 $(function()
 {
-    console.log("FUNCTION CALLED !");
-    //CALLING A WEATHER API FROM FREE CODE CAMP - MY ATTEMPT AT 20 API POINTS
-    // in case of fixing issue, use 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyCGRpqvx7p2BirqPpxHjytmDFFCpAGm6lI&location=40.5863028,-75.3552942&radius=50&type=hospital'
+    //CALLING A WEATHER API FROM FREE CODE CAMP - ATTEMPT AT 20 API POINTS
+
+    //hard coded coordinates - CHANGE LATER
     var lat = 40.5863028;
     var long = -75.3552942;
     console.log("LAT= " + Lat);
     console.log("LONG =" + Long);
+
     const URL = 'https://fcc-weather-api.glitch.me/api/current?lat=' + Lat + '&lon=' + Long
     $.ajax(
     {
@@ -111,7 +111,7 @@ $(function()
             var F = ((result.main.temp * CtoF) + 32);
             var final = Math.floor(F);
 
-            //display weather data
+            //display weather data in designated headers
             $("#formone").html("The temperature will be: " + final + "&#176");
             $("#formtwo").html("The cloud coverage will be: " + result.weather[0].description);
             $("#formthree").html("The wind will be: " + result.wind.speed + " mph");
@@ -126,6 +126,7 @@ $(function()
 });
 
 //FINDING THE NEAREST HOSPITAL VIA TRUE WAY PLACES API - ATTEMPT AT API 20 POINTS
+/*
 const hospitalURL = 'https://trueway-places.p.rapidapi.com/FindPlacesNearby?location=37.783366%2C-122.402325&language=en&radius=5000&type=hospital';
 $.ajax(
     {
@@ -148,4 +149,4 @@ $.ajax(
             console.log(response.results[0].distance);
         }
     });
-    
+*/
