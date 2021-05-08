@@ -17,6 +17,12 @@
   align-self: center;
 }
 
+.reaction {
+  height: 30%;
+  width:30%;
+  align-self: center;
+}
+
 .class-for-index {
     color: red;
 }
