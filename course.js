@@ -32,7 +32,7 @@ $(function getState()
     
 });
 
-$(function getCourse()
+$(function matchState()
 {
     //PSEUDOCODE: 
     //Run through each document in the Regions collection (aka all the regions)
@@ -41,38 +41,28 @@ $(function getCourse()
 
     db = firebase.firestore();
     //get all regions and loop through
-    db.collection("Regions").get().then((querySnapshot) => {
+    db.collection("Regions").get().then((querySnapshot) =>
+    {
         //START REGION LOOP
         querySnapshot.forEach((doc) => 
         {
             var match = doc.data().States;
-            var course = doc.data().CourseName;
-            Lat = doc.data().Latitude;
-            Long = doc.data().Longitude;
 
-
-            //START STATE LOOP
+            //START STATES LOOP
             $.each(match, function()
             {
-                console.log("State being searched: " + match);
-
-                if(match = State)
+                if(State.localeCompare(match))
                 {
                     $("#st").html(State.toUpperCase());
-                    loc = course;
-                    console.log("CourseName in loop: " + loc);
-                    console.log(match);
-                    
                 }
             });
             //STATE LOOP ENDS HERE
         });
         //REGION LOOP ENDS HERE
     });
-    //FUNCTION LOOP ENDS HERE
-    console.log("CourseName at end: " + loc);
-    
 });
+
+
 
 
 $(function()
