@@ -32,35 +32,58 @@ $(function getState()
     
 });
 
-$(function matchState()
-{
+
     //PSEUDOCODE: 
     //Run through each document in the Regions collection (aka all the regions)
     //Run through each collection in each document (aka all the states)
     //find the state that matches, and then get the course location and name
 
     db = firebase.firestore();
+    /*
+    const matchStates = async () => 
+    {
+        var sexy = db.collection("States");
+        var gay = sexy.get()
+            .then(querySnapshot => {
+                querySnapshot.forEach(doc => {
+                    var statename = await doc.data().Name;
+                    var course = await doc.data().Course;
+                    if(State.localeCompare(statename))
+                    {
+                        //console.log("runs");
+                       $("#st").html(State.toUpperCase());
+                       $("#crse").html(course.toUpperCase());
+                    }
+                    console.log(doc.id, '=>', doc.data());
+                });
+            });
+    }
+    */
+
+    //matchStates();
+    /*
     //get all regions and loop through
-    db.collection("Regions").get().then((querySnapshot) =>
+    ("States").get().then((querySnapshot) =>
     {
         //START REGION LOOP
         querySnapshot.forEach((doc) => 
         {
-            var match = doc.data().States;
-
+            var statename = doc.data().Name;
+            var course = doc.data().Course;
             //START STATES LOOP
-            $.each(match, function()
-            {
-                if(State.localeCompare(match))
-                {
-                    $("#st").html(State.toUpperCase());
-                }
-            });
-            //STATE LOOP ENDS HERE
+            if(State.localeCompare(statename))
+             {
+                 //console.log("runs");
+                $("#st").html(State.toUpperCase());
+                //$("#crse").html(course.toUpperCase());
+             }
         });
-        //REGION LOOP ENDS HERE
+            //STATE LOOP ENDS HERE
     });
-});
+    */
+
+    //console.log(db.collection("States").where("Name", "==", State));
+        //REGION LOOP ENDS HERE
 
 
 
@@ -99,3 +122,27 @@ $(function()
         }
     })
 });
+
+const hospitalURL = 'https://trueway-places.p.rapidapi.com/FindPlacesNearby?location=37.783366%2C-122.402325&language=en&radius=5000&type=hospital';
+$.ajax(
+    {
+        "async": true,
+        "crossDomain": true,
+        "url": hospitalURL,
+        "method": "GET",
+        "headers":
+        {
+            "x-rapidapi-key": "b82792d8aamshc3fc540ba91e06fp174444jsn4cb1b132bb2a",
+            "x-rapidapi-host": "trueway-places.p.rapidapi.com"
+        },
+        success: function(response)
+        {
+            var hop = response.results[0].name;
+            $("#nearest").html(hop.toUpperCase());
+            var dis = response.results[0].distance;
+            $("#dist").html(dis + " meters away.")
+            //console.log(response.results[0].name);
+            console.log(response.results[0].distance);
+        }
+    });
+    
