@@ -1,3 +1,4 @@
+//import { each } from "jquery";
 
 var paramsString = window.location.search;
 var searchParams = new URLSearchParams(paramsString);
@@ -33,8 +34,50 @@ $(function getState()
 
 $(function getCourse()
 {
+    //PSEUDOCODE: 
+    //Run through each document in the Regions collection (aka all the regions)
+    //Run through each collection in each document (aka all the states)
+    //find the state that matches, and then get the course location and name
     db = firebase.firestore();
-    console.log(db);
+    //console.log("db: ");
+    //console.log(db);
+    //var docRef = db.collection("Regions").doc("Mountain");
+    //var test = docRef.get();
+    //console.log("docRef: ");
+    //console.log(docRef);
+    //var i = 0;
+    db.collection("Regions").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        });
+    });
+    
+    //var docRef = db.collection("Regions").doc("Mountain");
+    //console.log(docRef);
+    //admin.firestore().collection('drinks').orderBy('createdAt', 'desc').get()
+    /*
+    docRef.get().then((doc) => {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+    */
+    //var states_list = db.collection("Regions").document
+    /*foreach(region in db.collection("Regions"))
+    {
+        i++;
+        console.log(i);
+    }
+    */
+    
+    //console.log(db);
+
     //Lat = firebase.firestore().collections("Regions")
 });
 
