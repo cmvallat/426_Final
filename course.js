@@ -3,9 +3,10 @@
 var paramsString = window.location.search;
 var searchParams = new URLSearchParams(paramsString);
 var State = "";
-var CourseName;
-var Lat;
-var Long;
+var Regions = [];
+var loc = "";
+var Lat = 5;
+var Long = 7;
 
 var firebaseConfig = {
     apiKey: "AIzaSyAogoNhW6Xviae9I5KweXYgnKa8Ng0WrO8",
@@ -28,8 +29,7 @@ $(function getState()
     {
         State = value;
     }
-    $("#st").html(State.toUpperCase());
-    $("#crse").html("FUNCTION RAN");
+    
 });
 
 $(function getCourse()
@@ -38,56 +38,53 @@ $(function getCourse()
     //Run through each document in the Regions collection (aka all the regions)
     //Run through each collection in each document (aka all the states)
     //find the state that matches, and then get the course location and name
-    db = firebase.firestore();
-    //console.log("db: ");
-    //console.log(db);
-    //var docRef = db.collection("Regions").doc("Mountain");
-    //var test = docRef.get();
-    //console.log("docRef: ");
-    //console.log(docRef);
-    //var i = 0;
-    db.collection("Regions").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
-        });
-    });
-    
-    //var docRef = db.collection("Regions").doc("Mountain");
-    //console.log(docRef);
-    //admin.firestore().collection('drinks').orderBy('createdAt', 'desc').get()
-    /*
-    docRef.get().then((doc) => {
-        if (doc.exists) {
-            console.log("Document data:", doc.data());
-        } else {
-            // doc.data() will be undefined in this case
-            console.log("No such document!");
-        }
-    }).catch((error) => {
-        console.log("Error getting document:", error);
-    });
-    */
-    //var states_list = db.collection("Regions").document
-    /*foreach(region in db.collection("Regions"))
-    {
-        i++;
-        console.log(i);
-    }
-    */
-    
-    //console.log(db);
 
-    //Lat = firebase.firestore().collections("Regions")
+    db = firebase.firestore();
+    //get all regions and loop through
+    db.collection("Regions").get().then((querySnapshot) => {
+        //START REGION LOOP
+        querySnapshot.forEach((doc) => 
+        {
+            var match = doc.data().States;
+            var course = doc.data().CourseName;
+            Lat = doc.data().Latitude;
+            Long = doc.data().Longitude;
+
+
+            //START STATE LOOP
+            $.each(match, function()
+            {
+                console.log("State being searched: " + match);
+
+                if(match = State)
+                {
+                    $("#st").html(State.toUpperCase());
+                    loc = course;
+                    console.log("CourseName in loop: " + loc);
+                    console.log(match);
+                    
+                }
+            });
+            //STATE LOOP ENDS HERE
+        });
+        //REGION LOOP ENDS HERE
+    });
+    //FUNCTION LOOP ENDS HERE
+    console.log("CourseName at end: " + loc);
+    
 });
+
 
 $(function()
 {
+    console.log("FUNCTION CALLED !");
     //CALLING A WEATHER API FROM FREE CODE CAMP - MY ATTEMPT AT 20 API POINTS
     // in case of fixing issue, use 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyCGRpqvx7p2BirqPpxHjytmDFFCpAGm6lI&location=40.5863028,-75.3552942&radius=50&type=hospital'
     var lat = 40.5863028;
-    var lon = -75.3552942;
-    const URL = 'https://fcc-weather-api.glitch.me/api/current?lat=' + lat + '&lon=' + lon
+    var long = -75.3552942;
+    console.log("LAT= " + Lat);
+    console.log("LONG =" + Long);
+    const URL = 'https://fcc-weather-api.glitch.me/api/current?lat=' + Lat + '&lon=' + Long
     $.ajax(
     {
         url: URL,
