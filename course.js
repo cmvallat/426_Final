@@ -28,6 +28,7 @@ $(function getState()
     for(var value of searchParams.values()) 
     {
         State = value;
+        $("#st").html(State.toUpperCase());
     }
     
 });
@@ -39,6 +40,7 @@ $(function getState()
     //find the state that matches, and then get the course location and name
 
     db = firebase.firestore();
+    
     /*
     const matchStates = async () => 
     {
@@ -123,6 +125,7 @@ $(function()
     })
 });
 
+//FINDING THE NEAREST HOSPITAL VIA TRUE WAY PLACES API - ATTEMPT AT API 20 POINTS
 const hospitalURL = 'https://trueway-places.p.rapidapi.com/FindPlacesNearby?location=37.783366%2C-122.402325&language=en&radius=5000&type=hospital';
 $.ajax(
     {
@@ -140,7 +143,7 @@ $.ajax(
             var hop = response.results[0].name;
             $("#nearest").html(hop.toUpperCase());
             var dis = response.results[0].distance;
-            $("#dist").html(dis + " meters away.")
+            $("#dist").html("(" + dis + " meters away.)")
             //console.log(response.results[0].name);
             console.log(response.results[0].distance);
         }
