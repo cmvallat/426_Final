@@ -39,7 +39,7 @@ firebase.auth().onAuthStateChanged(firebaseUser =>
     {
         if(firebaseUser)
         {
-            console.log(firebaseUser)
+            console.log("successfully logged in!")
         }
         else
         {

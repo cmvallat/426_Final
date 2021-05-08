@@ -96,12 +96,10 @@
                     $("#crse").html(COURSES[z].toUpperCase());
                     lati = LAT[z];
                     longi = LONG[z];
-                    //var link = "https://www.google.com/maps/embed/v1/streetview?key=AIzaSyCGRpqvx7p2BirqPpxHjytmDFFCpAGm6lI&location=30.5863028,-95.3552942";
-                    //$("#MAP").attr('src', link)
-                    //window.location.reload();
-                    //window.location.reload();
                     console.log("in func lat is: " + lati);
                     console.log("in func long is: " + longi);
+
+                    //CALLING FREE CODE CAMP WEATHER API TO GET REGIONAL WEATHER - API 20 POINT ATTEMPT
                     const URL = 'https://fcc-weather-api.glitch.me/api/current?lat=' + lati + '&lon=' + longi
         $.ajax(
         {
@@ -126,7 +124,8 @@
                 console.log(`Error ${error}`)
             }
         })     
-        /*
+        
+        //CALLING TRUE WAY PLACES API TO GET NEAREST HOSPITAL - API 20 POINT ATTEMPT
         const hospitalURL = 'https://trueway-places.p.rapidapi.com/FindPlacesNearby?location=' + lati + '%2C' + longi + '&language=en&radius=5000&type=hospital';
     $.ajax(
         {
@@ -149,7 +148,7 @@
                 console.log(response.results[0].distance);
             }
         });
-        */
+        
                 }
             }
            
