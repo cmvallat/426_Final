@@ -10,6 +10,8 @@
     var LONG = [];
     var lati = 5;
     var longi = 7;
+    var region = "north";
+    var REG = [];
 
     var firebaseConfig = {
         apiKey: "AIzaSyAogoNhW6Xviae9I5KweXYgnKa8Ng0WrO8",
@@ -65,12 +67,14 @@
                         course =  doc.data().Course;
                         latitude = doc.data().Lat;
                         longitude = doc.data().Long;
+                        region = doc.data().Region;
                         //console.log("TEST LAT" + latitude);
                         //console.log("TEST LONG" + longitude);
                         STATES[i] = statename;
                         COURSES[i] = course;
                         LAT[i] = latitude;
                         LONG[i] = longitude;
+                        REG[i] = region;
                     });
                 //});
         }
@@ -85,15 +89,18 @@
             console.log(STATES);
             console.log("Courses array:")
             console.log(COURSES);
+            console.log("Region array:")
+            console.log(REG)
             
             for(var z = 0; z < 50; z++)
             {
                 if(STATES[z] == State)
                 {
                     console.log("State is: " + STATES[z]);
-                    $("#st").html(STATES[z].toUpperCase());
+                    $("#st").html(STATES[z].toUpperCase() + ",");
                     console.log("Course is: " + COURSES[z]);
                     $("#crse").html(COURSES[z].toUpperCase());
+                    $("#reg").html(REG[z].toUpperCase());
                     lati = LAT[z];
                     longi = LONG[z];
                     console.log("in func lat is: " + lati);
@@ -143,7 +150,7 @@
                 var hop = response.results[0].name;
                 $("#nearest").html(hop.toUpperCase());
                 var dis = response.results[0].distance;
-                $("#dist").html("(" + dis + " meters away.)")
+                $("#dist").html("(" + dis + " meters away)")
                 //console.log(response.results[0].name);
                 console.log(response.results[0].distance);
             }
