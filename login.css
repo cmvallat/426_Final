@@ -7,3 +7,38 @@
 {
     align-self: center;
 }
+
+.body
+{
+    background-color: #cf5c00;
+
+}
+
+.login
+{
+    margin: auto;
+    width: 40%;
+    border: 3px solid#8d1e00;
+    padding: 10px;
+    text-align: center;
+    background-color: #f1d26c;
+}
+
+.header
+{
+    color: #2b1200;
+    text-align: center;
+    font-size: 50px;
+}
+
+.button
+{
+    background-color:#8d1e00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

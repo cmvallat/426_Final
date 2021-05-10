@@ -7,7 +7,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>Race Preparation</title>
     </head>
-    <body class="class-for-page2">
+    <body class="body">
         
         <!-- Setting up Firebase -->
         <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
@@ -16,16 +16,23 @@
         <script type = "text/javascript" src="course.js"></script>
         
         <div id="pagetwo">
-            <h1>Time to prepare!</h1>
-            <h2> One of the most important aspects of competitive racing is preparation, which includes many aspects. </h2>
-            <h2>First, let's scout the course you will be running. </h2>
-            <h2>Since you are in </h2>
-            <h2 id="st" class="header">STATE</h2>
-            <h2>you will be running the course at:</h2>
-            <h2 id="crse" class="header">COURSE NAME</h2>
-            <h2>Have a quick look around:</h2>
+            <h1 class="header"> Step 1: Scout the Course</h1>
+            <h2 class="text"> The NCAA breaks up regions according to the map below. </h2>
+            <h2 class="text">Since you are in </h2>
+            <h2 id="st" class="text">STATE HERE</h2>
+            <h2 class="text">you will be competing in the</h2>
+            <h2 class="text" id="reg">REGION HERE</h2>
+            <h2 class="text">region.</h2>
             <br>
+            <img src="images/regions.jpg" class="image" width = "800" height = "500">
+            <h2 class="text"> You will be running the course in </h2>
+            <h2 id="crse" class="text">COURSE NAME</h2>
+            <h2 class="text"> To prepare, runners usually scout the course ahead of time. </h2>
+            <h2 class="text"> Below is an interactive map of your course. Take a brief look around: </h2>
 
+
+
+            
             <iframe id="MAP"
                 width="700"
                 height="450"
@@ -36,18 +43,25 @@
              
              <br> <br>
 
-             <h2>Weather is another big factor that can affect a race. It's always smart to check ahead of time.</h2>
-             <h2>On race day:</h2>
-             <h2 id="formone" class="header">TEMP </h2>
-             <h2 id="formtwo" class="header">CLOUDS </h2>
-             <h2 id="formthree" class="header">WIND </h2>
+             <h2 class="header">Step 2: Check the Weather</h2>
+             <h2 class="text">Weather is another big factor that can affect a race, whether it is cloudy, rainy, or sunny. 
+             <h2 class="text">Again, it's always smart to check ahead of time.</h2>
+             <h2 class="text">On race day, the forecast is:</h2>
+             <div class="form">
+                <img src="images/rain.png" width = "50%" height = "50%">
+                <h2 id="formone" class="text">TEMP </h2>
+                <h2 id="formtwo" class="text">CLOUDS </h2>
+                <h2 id="formthree" class="text">WIND </h2>
+             </div>
+             
 
              <br>
 
-             <h2>Unfortunately, runners sometimes get hurt during a race. Be prepared for the worst.</h2>
-             <h2>In case of injury, the nearest hospital is:</h2>
-             <h2 id="nearest" class="header">HOSPITAL</h2>
-             <h2 id="dist" class="header">METERS</h2>
+             <h2 class="header">Step 3: Prepare for injury</h2>
+             <h2 class="text">Unfortunately, runners sometimes get hurt during a race. Be prepared for the worst.</h2>
+             <h2 class="text">In case of injury, the nearest hospital is:</h2>
+             <h2 id="nearest" class="text">HOSPITAL</h2>
+             <h2 id="dist" class="text">METERS</h2>
              <img src="images/hospital.png" class="image">
 
              <br> <br> <br>

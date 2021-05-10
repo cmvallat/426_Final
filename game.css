@@ -21,8 +21,8 @@
     border-style: solid;
     border-width: 3px;
     
-    -moz-animation: fadeinLoad 5s;
-    animation: hill 2s infinite linear alternate;
+    animation: fadeinLoad 10s;
+        animation: hill 2s infinite linear alternate;
 }
 
 @keyframes hill 
@@ -45,8 +45,8 @@
     border-style: solid;
     border-width: 3px;
 
-    -moz-animation: fadeinLoad 5s;
-    animation: opp 1.5s linear alternate infinite;
+    animation: fadeinLoad 10s;
+        animation: opp 1.5s linear alternate infinite;
 }
 
 @keyframes opp 
@@ -68,8 +68,8 @@
     border-style: solid;
     border-width: 3px;
 
-    -moz-animation: fadeinLoad 5s;
-    animation: apple 0.5s linear alternate infinite;
+    animation: fadeinLoad 10s;
+        animation: apple 0.5s linear alternate infinite;
 }
 
 @keyframes apple
@@ -93,8 +93,8 @@
     border-style: solid;
     border-width: 3px;
 
-    -moz-animation: fadeinLoad 5s;
-    animation: peach 1s ease alternate infinite;
+    animation: fadeinLoad 10s;
+        animation: peach 1s ease alternate infinite;
 }
 
 @keyframes peach

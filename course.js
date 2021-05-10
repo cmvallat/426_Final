@@ -113,9 +113,9 @@
                 var final = Math.floor(F);
 
                 //display weather data in designated headers
-                $("#formone").html("The temperature will be: " + final + "&#176");
-                $("#formtwo").html("The cloud coverage will be: " + result.weather[0].description);
-                $("#formthree").html("The wind will be: " + result.wind.speed + " mph");
+                $("#formone").html("Temperature: " + final + "&#176");
+                $("#formtwo").html("Clouds/Precipitation: " + result.weather[0].description);
+                $("#formthree").html("Wind Speed: " + result.wind.speed + " mph");
                 console.log(result.name);
             },
 
