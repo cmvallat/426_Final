@@ -129,14 +129,42 @@
 
                 //choose icon based on condition code (according to API documentation)
 
-                //broken clouds
-                if(result.weather[0].id == 803)
+                //200 codes: thunderstorm
+                if(result.weather[0].id >= 200 && result.weather[0].id < 300)
                 {
-                    $("#icon").attr('src', 'images/cloudy.png');
+                    $("#icon").attr('src', 'images/thunderstormpng.png');
                 }
+                //300 codes: drizzle
+                if(result.weather[0].id >= 300 && result.weather[0].id < 400)
+                {
+                    $("#icon").attr('src', 'images/drizzlepng.png');
+                }
+                //500 codes: rain
+                if(result.weather[0].id >= 500 && result.weather[0].id < 600)
+                {
+                    $("#icon").attr('src', 'images/rainpng.png');
+                }
+                //600 codes: snow
+                if(result.weather[0].id >= 600 && result.weather[0].id < 700)
+                {
+                    $("#icon").attr('src', 'images/snowpng.png');
+                }
+                //800 code: clear sky
+                //801 code: few clouds
+                if(result.weather[0].id == 800 || result.weather[0].id == 801)
+                {
+                    $("#icon").attr('src', 'images/sunpng.png');
+                }
+                //802 code: scattered clouds
+                //803 code: broken clouds
+                if(result.weather[0].id == 802 || result.weather[0].id == 803)
+                {
+                    $("#icon").attr('src', 'images/brokenscatteredpng.png');
+                }
+                //804 code: overcast
                 if(result.weather[0].id == 804)
                 {
-                    $("#icon").attr('src', 'images/cloudy.png');
+                    $("#icon").attr('src', 'images/overcastpng.png');
                 }
                 console.log(result.name);
             },
@@ -180,32 +208,3 @@
         matchStates();
         console.log("out of func lat: " + lati);
         console.log("out of func long: " + longi);
-        
-
-    
-    //FINDING THE NEAREST HOSPITAL VIA TRUE WAY PLACES API - ATTEMPT AT API 20 POINTS
-    /*
-    const hospitalURL = 'https://trueway-places.p.rapidapi.com/FindPlacesNearby?location=37.783366%2C-122.402325&language=en&radius=5000&type=hospital';
-    $.ajax(
-        {
-            "async": true,
-            "crossDomain": true,
-            "url": hospitalURL,
-            "method": "GET",
-            "headers":
-            {
-                "x-rapidapi-key": "b82792d8aamshc3fc540ba91e06fp174444jsn4cb1b132bb2a",
-                "x-rapidapi-host": "trueway-places.p.rapidapi.com"
-            },
-            success: function(response)
-            {
-                var hop = response.results[0].name;
-                $("#nearest").html(hop.toUpperCase());
-                var dis = response.results[0].distance;
-                $("#dist").html("(" + dis + " meters away.)")
-                //console.log(response.results[0].name);
-                console.log(response.results[0].distance);
-            }
-        });
-    */
-   //window.location.reload();
