@@ -36,7 +36,7 @@
             //console.log("before function" + State)
             State = value;
             //console.log("after function" + State);
-            $("#st").html(State.toUpperCase());
+            //$("#st").html(State.toUpperCase());
         }
     };
     getState();
@@ -101,12 +101,14 @@
                     console.log("Course is: " + COURSES[z]);
                     $("#crse").html(COURSES[z].toUpperCase());
                     $("#reg").html(REG[z].toUpperCase());
+                    $("MAP").attr("src", "https://www.google.com/maps/embed/v1/streetview?key=AIzaSyCGRpqvx7p2BirqPpxHjytmDFFCpAGm6lI&location=30.5863028,-65.3552942");
                     lati = LAT[z];
                     longi = LONG[z];
                     console.log("in func lat is: " + lati);
                     console.log("in func long is: " + longi);
 
                     //CALLING FREE CODE CAMP WEATHER API TO GET REGIONAL WEATHER - API 20 POINT ATTEMPT
+                    //const URL = 'api.openweathermap.org/data/2.5/weather?lat=' + lati + '&lon=' + longi + '&appid=5ed6f25a2e648bca4b87c3cc18177bb6';
                     const URL = 'https://fcc-weather-api.glitch.me/api/current?lat=' + lati + '&lon=' + longi
         $.ajax(
         {
@@ -117,12 +119,25 @@
                 //convert to farenheit cause we love america
                 var CtoF = 9 / 5;
                 var F = ((result.main.temp * CtoF) + 32);
-                var final = Math.floor(F);
+                var final = Math.round(F);
+                var ic = result.weather[0].icon;
 
                 //display weather data in designated headers
                 $("#formone").html("Temperature: " + final + "&#176");
                 $("#formtwo").html("Clouds/Precipitation: " + result.weather[0].description);
                 $("#formthree").html("Wind Speed: " + result.wind.speed + " mph");
+
+                //choose icon based on condition code (according to API documentation)
+
+                //broken clouds
+                if(result.weather[0].id == 803)
+                {
+                    $("#icon").attr('src', 'images/cloudy.png');
+                }
+                if(result.weather[0].id == 804)
+                {
+                    $("#icon").attr('src', 'images/cloudy.png');
+                }
                 console.log(result.name);
             },
 
@@ -162,7 +177,7 @@
             
             
         });
-        //matchStates();
+        matchStates();
         console.log("out of func lat: " + lati);
         console.log("out of func long: " + longi);
         
