@@ -16,6 +16,13 @@
     text-align: center;
 }
 
+.text_hide
+{
+    color: #30110D;
+    text-align: center;
+    display: none;
+}
+
 .button{
   background-color:#722620;
   color: white;
@@ -25,6 +32,19 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+.button_hide
+{
+  background-color:#722620;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  display: none;
 }
 
 .form
