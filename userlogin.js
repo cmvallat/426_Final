@@ -16,15 +16,15 @@ const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
 const btnSignUp = document.getElementById('btnSignUp');
 const btnLogin = document.getElementById('btnLogin');
-var log = false;
-var sign = false;
+//var log = false;
+//var sign = false;
 
 btnLogin.addEventListener('click', e =>
 {
     const email = txtEmail.value;
     const pass = txtPassword.value;
     const auth = firebase.auth();
-    log = true;
+    //log = true;
     const promise = auth.signInWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
 });
@@ -33,7 +33,7 @@ btnSignUp.addEventListener('click', e =>
 {
     const email = txtEmail.value;
     const pass = txtPassword.value;
-    sign = true;
+    //sign = true;
     const auth = firebase.auth();
     const promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
@@ -41,15 +41,10 @@ btnSignUp.addEventListener('click', e =>
 
 firebase.auth().onAuthStateChanged(firebaseUser =>
     {
-        if(firebaseUser && log)
+        if(firebaseUser)
         {
-            console.log("log");
+            console.log("logged in!");
             //document.getElementById("#response").html("successfully logged in!");
-        }
-        if(firebaseUser && sign)
-        {
-            //console.log("sign");
-            document.getElementById("#res").html("successfully signed up!");
         }
         else
         {
