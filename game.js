@@ -1,3 +1,5 @@
+
+
 //start timer on load
 var enterDate = new Date();
 
@@ -5,6 +7,19 @@ function secondsSinceEnter() //get total time
 {
   return (new Date() - enterDate) / 1000;
 }
+
+
+
+document.getElementById('start').addEventListener('click',function() 
+{
+    enterDate = new Date();
+    console.log("button clicked");
+    document.getElementById("hill").style.animationPlayState = "running";
+    document.getElementById("opp").style.animationPlayState = "running";
+    document.getElementById("apple").style.animationPlayState = "running";
+    document.getElementById("peach").style.animationPlayState = "running";
+
+});
 
 //when user runs into an obstacle, get final time
 

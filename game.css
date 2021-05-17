@@ -1,3 +1,37 @@
+.header
+{
+    color: #30110D;
+    text-align: center;
+    font-size: 40px;
+}
+
+.text
+{
+    color: #30110D;
+    text-align: center;
+}
+
+.body
+{
+    background-color: #F2BC94;
+}
+
+.begin{
+    background-color:#722620;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  #pagetwo {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+  }
+
 .game
 {
     width: 1250px;
@@ -5,6 +39,7 @@
     border: 1px solid black;
     margin: auto;
     cursor: url(images/guy_small.jpg) 25 15, auto;
+    background-color: #FFFFFF;
 }
 
 
@@ -21,9 +56,10 @@
     border-style: solid;
     border-width: 3px;
     
-    animation: fadeinLoad 10s;
-        animation: hill 2s infinite linear alternate;
+    animation: hill 2s infinite linear alternate;
+    animation-play-state: paused;
 }
+
 
 @keyframes hill 
 {
@@ -45,8 +81,9 @@
     border-style: solid;
     border-width: 3px;
 
-    animation: fadeinLoad 10s;
-        animation: opp 1.5s linear alternate infinite;
+    animation: opp 1.5s linear alternate infinite;
+    animation-play-state: paused;
+
 }
 
 @keyframes opp 
@@ -68,14 +105,15 @@
     border-style: solid;
     border-width: 3px;
 
-    animation: fadeinLoad 10s;
-        animation: apple 0.5s linear alternate infinite;
+    animation: apple 0.5s linear alternate infinite;
+    animation-play-state: paused;
+
 }
 
 @keyframes apple
 {
-    0% {top: -100px;}
-    100% {top: 230px;}
+    0% {top: -300px;} /*top*/
+    100% {top: 15px;}
 
 }
 
@@ -93,14 +131,15 @@
     border-style: solid;
     border-width: 3px;
 
-    animation: fadeinLoad 10s;
-        animation: peach 1s ease alternate infinite;
+    animation: peach 1s ease alternate infinite;
+    animation-play-state: paused;
+
 }
 
 @keyframes peach
 {
-    0% {top: -150px;}
-    100% {top: 180px;}
+    0% {top: -360px;}
+    100% {top: -35px;}
 }
 
 
@@ -108,8 +147,8 @@
 {
     width: 500px;
     height: 100px;
-    position: absolute;
-    top: 96px;
+    position: relative;
+    top: -300px;
     left: 131px;
     border-style: solid;
     border-width: 3px;
@@ -123,9 +162,9 @@
 {
     width: 500px;
     height: 100px;
-    position: absolute;
-    top: 96px;
-    left: 631px;
+    position: relative;
+    top: -190px;
+    left: 640px;
     border-style: solid;
     border-width: 3px;
 
@@ -134,12 +173,13 @@
     
 }
 
+
 #finish
 {
     width: 200px;
     height: 200px;
     position: relative;
-    top: -96px;
+    top: -300px;
     left: 1050px;
 
     background-image: url(images/finish.jpg);
