@@ -81,6 +81,7 @@
 
         matchStates().then((value) =>
         {
+            /*
             console.log("lat array:")
             console.log(LAT);
             console.log("long array:")
@@ -91,21 +92,22 @@
             console.log(COURSES);
             console.log("Region array:")
             console.log(REG)
+            */
             
             for(var z = 0; z < 50; z++)
             {
                 if(STATES[z] == State)
                 {
-                    console.log("State is: " + STATES[z]);
+                    //console.log("State is: " + STATES[z]);
                     $("#st").html(STATES[z].toUpperCase() + ",");
-                    console.log("Course is: " + COURSES[z]);
+                    //console.log("Course is: " + COURSES[z]);
                     $("#crse").html(COURSES[z].toUpperCase());
                     $("#reg").html(REG[z].toUpperCase());
                     $("MAP").attr("src", "https://www.google.com/maps/embed/v1/streetview?key=AIzaSyCGRpqvx7p2BirqPpxHjytmDFFCpAGm6lI&location=30.5863028,-65.3552942");
                     lati = LAT[z];
                     longi = LONG[z];
-                    console.log("in func lat is: " + lati);
-                    console.log("in func long is: " + longi);
+                    //console.log("in func lat is: " + lati);
+                    //console.log("in func long is: " + longi);
 
                     //CALLING FREE CODE CAMP WEATHER API TO GET REGIONAL WEATHER - API 20 POINT ATTEMPT
                     //const URL = 'api.openweathermap.org/data/2.5/weather?lat=' + lati + '&lon=' + longi + '&appid=5ed6f25a2e648bca4b87c3cc18177bb6';
@@ -166,7 +168,7 @@
                 {
                     $("#icon").attr('src', 'images/overcastpng.png');
                 }
-                console.log(result.name);
+                //console.log(result.name);
             },
 
             error: function(error)
@@ -195,7 +197,7 @@
                 var dis = response.results[0].distance;
                 $("#dist").html("(" + dis + " meters away)")
                 //console.log(response.results[0].name);
-                console.log(response.results[0].distance);
+                //console.log(response.results[0].distance);
             }
         });
         
@@ -206,5 +208,5 @@
             
         });
         matchStates();
-        console.log("out of func lat: " + lati);
-        console.log("out of func long: " + longi);
+        //console.log("out of func lat: " + lati);
+        //console.log("out of func long: " + longi);

@@ -73,12 +73,95 @@
              <h2 class="text">Now, you have to get in the right state of mind - a champion's state of mind.</h2>
              <h2 class="text">Choose your method of inspiration below:</h2>
 
-             <a href="espn.com"><button href="espn.com" target="_self" class="button">Want to keep it light? Click for a joke</button></a>
-             <br> <br>
-             <a href="espn.com"><button href="espn.com" target="_self" class="button">Need some inspiration? Click for a quote</button></a>
-             <br> <br>
-             <a href="espn.com"><button href="espn.com" target="_self" class="button">Want someone to rile you up? Click for an insult</button></a>
-             <br> <br>
+             <button class="button" onclick="joke()">Want to keep it light? Click for a joke</button>
+             <script>
+                 function joke()
+                 {
+                     const settings = 
+                     {
+	                    "async": true,
+	                    "crossDomain": true,
+	                    "url": "https://dad-jokes.p.rapidapi.com/random/joke",
+	                    "method": "GET",
+	                    "headers": 
+                        {
+		                    "x-rapidapi-key": "b82792d8aamshc3fc540ba91e06fp174444jsn4cb1b132bb2a",
+		                    "x-rapidapi-host": "dad-jokes.p.rapidapi.com"
+	                    }
+                    };
+
+                    $.ajax(settings).done(function (response) 
+                    {
+                        document.getElementById("joke_label").innerHTML = response.body[0].setup;
+                        document.getElementById("joke_label2").innerHTML = response.body[0].punchline;
+                    });
+                }
+             </script>
+             <br> 
+             <h2 class="text" id="joke_label"></h2>
+             <h2 class="text" id="joke_label2"></h2>
+
+             
+
+             <button class="button" onclick="quote()">Need some inspiration? Click for a quote</button>
+             <script>
+                 function quote()
+                 {
+                    const settings = 
+                    {
+	                    "async": true,
+	                    "crossDomain": true,
+	                    "url": "https://quotes15.p.rapidapi.com/quotes/random/",
+	                    "method": "GET",
+	                    "headers": 
+                        {
+		                    "x-rapidapi-key": "b82792d8aamshc3fc540ba91e06fp174444jsn4cb1b132bb2a",
+		                    "x-rapidapi-host": "quotes15.p.rapidapi.com"
+	                    }
+                    };
+
+                    $.ajax(settings).done(function (response) 
+                    {
+                        //console.log(response);
+                        document.getElementById("quote_label").innerHTML = response.content;
+                    });
+
+                 }
+             </script>
+             <br> 
+             <h2 class="text" id="quote_label"></h2>
+             
+
+             <button class="button" onclick="insult()">Want someone to rile you up? Click for an insult</button>
+             <!--
+             <script>
+                 function insult()
+                 {
+                    const settings = 
+                    {
+	                    "async": true,
+	                    "crossDomain": true,
+	                    "url": "https://insult-generation.p.rapidapi.com/taunt/generate?category=pirate-insult&limit=1",
+	                    "method": "GET",
+	                    "headers": 
+                        {
+		                    "x-rapidapi-key": "b82792d8aamshc3fc540ba91e06fp174444jsn4cb1b132bb2a",
+		                    "x-rapidapi-host": "insult-generation.p.rapidapi.com"
+	                    }
+                    };
+
+                    $.ajax(settings).done(function (response) 
+                    {
+                        //console.log(response);
+                        document.getElementById("insult_label").innerHTML = response.contents.taunts[0];
+                    });
+
+                 }
+             </script>
+            -->
+             <br> 
+             <h2 class="text" id="insult_label"></h2>
+             <br>
 
              <h2 class="header">The time has arrived!</h2>
              <h2 class="text">You're all ready to go! You've prepared all you can - now it's time to run!</h2>
