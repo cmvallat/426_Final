@@ -142,6 +142,18 @@
     100% {top: -35px;}
 }
 
+#red
+{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: -700px;
+    left: 20px;
+
+    background-image: url(images/red.png);
+    background-size: 80px 80px;
+    
+}
 
 #shrub
 {
