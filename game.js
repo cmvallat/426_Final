@@ -32,6 +32,10 @@ document.getElementById("finish").onmouseover = function()
     {
         var sec = secondsSinceEnter();
         alert("YOU WIN THE CHAMPIONSHIP! Your winning time was: " + sec + " seconds!!!");
+        document.getElementById("hill").style.animationPlayState = "paused";
+        document.getElementById("opp").style.animationPlayState = "paused";
+        document.getElementById("apple").style.animationPlayState = "paused";
+        document.getElementById("peach").style.animationPlayState = "paused";    
         window.location.href = "/win.html";
     }
 };
@@ -43,6 +47,10 @@ document.getElementById("hill").onmouseover = function()
     {
         var sec = secondsSinceEnter();
         alert("Oh no! You lost the race! Your final time was: " + sec + " seconds.");
+        document.getElementById("hill").style.animationPlayState = "paused";
+        document.getElementById("opp").style.animationPlayState = "paused";
+        document.getElementById("apple").style.animationPlayState = "paused";
+        document.getElementById("peach").style.animationPlayState = "paused";   
         window.location.href = "/lose.html";
     }
 };
@@ -53,6 +61,10 @@ document.getElementById("opp").onmouseover = function()
     {
         var sec = secondsSinceEnter();
         alert("Oh no! You lost the race! Your final time was: " + sec + " seconds.");
+        document.getElementById("hill").style.animationPlayState = "paused";
+        document.getElementById("opp").style.animationPlayState = "paused";
+        document.getElementById("apple").style.animationPlayState = "paused";
+        document.getElementById("peach").style.animationPlayState = "paused";   
         window.location.href = "/lose.html";
     }
 };
@@ -63,6 +75,10 @@ document.getElementById("apple").onmouseover = function()
     {
         var sec = secondsSinceEnter();
         alert("Oh no! You lost the race! Your final time was: " + sec + " seconds.");
+        document.getElementById("hill").style.animationPlayState = "paused";
+        document.getElementById("opp").style.animationPlayState = "paused";
+        document.getElementById("apple").style.animationPlayState = "paused";
+        document.getElementById("peach").style.animationPlayState = "paused";   
         window.location.href = "/lose.html";
     }
 };
@@ -73,6 +89,10 @@ document.getElementById("peach").onmouseover = function()
     {
         var sec = secondsSinceEnter();
         alert("Oh no! You lost the race! Your final time was: " + sec + " seconds.");
+        document.getElementById("hill").style.animationPlayState = "paused";
+        document.getElementById("opp").style.animationPlayState = "paused";
+        document.getElementById("apple").style.animationPlayState = "paused";
+        document.getElementById("peach").style.animationPlayState = "paused";   
         window.location.href = "/lose.html";
     }
 };
@@ -83,6 +103,10 @@ document.getElementById("shrub").onmouseover = function()
     {
         var sec = secondsSinceEnter();
         alert("Oh no! You lost the race! Your final time was: " + sec + " seconds.");
+        document.getElementById("hill").style.animationPlayState = "paused";
+        document.getElementById("opp").style.animationPlayState = "paused";
+        document.getElementById("apple").style.animationPlayState = "paused";
+        document.getElementById("peach").style.animationPlayState = "paused";   
         window.location.href = "/lose.html";
     }
 };
@@ -93,6 +117,10 @@ document.getElementById("tree").onmouseover = function()
     {
         var sec = secondsSinceEnter();
         alert("Oh no! You lost the race! Your final time was: " + sec + " seconds.");
+        document.getElementById("hill").style.animationPlayState = "paused";
+        document.getElementById("opp").style.animationPlayState = "paused";
+        document.getElementById("apple").style.animationPlayState = "paused";
+        document.getElementById("peach").style.animationPlayState = "paused";   
         window.location.href = "/lose.html";
     }
 };

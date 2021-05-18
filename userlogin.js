@@ -46,7 +46,7 @@ btnSignUp.addEventListener('click', e =>
     promise.catch(e => 
         document.getElementById("log").innerHTML = "Oops! An error occurred.");
         document.getElementById("help").className = "text";
-        document.getElementById("help").innerHTML = "An account has already been created with this email and password.";
+        document.getElementById("help").innerHTML = "An account has already been created with this email.";
         document.getElementById("help2").className = "text";
         document.getElementById("help2").innerHTML = "Create a new account, or login with an existing one.";
     });
