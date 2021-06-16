@@ -38,7 +38,7 @@
     height: 500px;
     border: 1px solid black;
     margin: auto;
-    cursor: url(images/guy_small.jpg) 25 15, auto;
+    cursor: url(images/mid.png) 25 15, auto;
     background-color: #FFFFFF;
 }
 
@@ -199,6 +199,7 @@
     
 }
 
+/*sets the image of the mouse cursor*/
 #follow {
     /*cursor: url(http://placehold.it/50x30) 25 15, auto; */
     position: absolute;
