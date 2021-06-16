@@ -33,28 +33,18 @@
     {
         for(var value of searchParams.values()) 
         {
-            //console.log("before function" + State)
             State = value;
-            //console.log("after function" + State);
-            //$("#st").html(State.toUpperCase());
         }
     };
     getState();
-    //console.log("out of loop" + State);
 
+        db = firebase.firestore();
 
         //PSEUDOCODE: 
         //Run through each document in the States collection (aka all the states)
         //Get the fields of the state's name and corresponding course location
         //find the state that matches to user needs, and then match with course location array
 
-        db = firebase.firestore();
-        //var city = await db.collection("States").get();
-        //var query = city.where("Name", "==", "Montana");
-        //console.log(city);
-
-
-        
         const matchStates = async () => 
         {
             var statename = [];
@@ -68,49 +58,30 @@
                         latitude = doc.data().Lat;
                         longitude = doc.data().Long;
                         region = doc.data().Region;
-                        //console.log("TEST LAT" + latitude);
-                        //console.log("TEST LONG" + longitude);
                         STATES[i] = statename;
                         COURSES[i] = course;
                         LAT[i] = latitude;
                         LONG[i] = longitude;
                         REG[i] = region;
                     });
-                //});
         }
 
         matchStates().then((value) =>
         {
-            /*
-            console.log("lat array:")
-            console.log(LAT);
-            console.log("long array:")
-            console.log(LONG);
-            console.log("States array:")
-            console.log(STATES);
-            console.log("Courses array:")
-            console.log(COURSES);
-            console.log("Region array:")
-            console.log(REG)
-            */
-            
             for(var z = 0; z < 50; z++)
             {
                 if(STATES[z] == State)
                 {
-                    //console.log("State is: " + STATES[z]);
                     $("#st").html(STATES[z].toUpperCase() + ",");
-                    //console.log("Course is: " + COURSES[z]);
                     $("#crse").html(COURSES[z].toUpperCase());
                     $("#reg").html(REG[z].toUpperCase());
+
+                    //tried to get the google maps to respond to change in state - couldn't work
                     $("MAP").attr("src", "https://www.google.com/maps/embed/v1/streetview?key=AIzaSyCGRpqvx7p2BirqPpxHjytmDFFCpAGm6lI&location=30.5863028,-65.3552942");
                     lati = LAT[z];
                     longi = LONG[z];
-                    //console.log("in func lat is: " + lati);
-                    //console.log("in func long is: " + longi);
-
+                   
                     //CALLING FREE CODE CAMP WEATHER API TO GET REGIONAL WEATHER - API 20 POINT ATTEMPT
-                    //const URL = 'api.openweathermap.org/data/2.5/weather?lat=' + lati + '&lon=' + longi + '&appid=5ed6f25a2e648bca4b87c3cc18177bb6';
                     const URL = 'https://fcc-weather-api.glitch.me/api/current?lat=' + lati + '&lon=' + longi
         $.ajax(
         {
@@ -168,7 +139,6 @@
                 {
                     $("#icon").attr('src', 'images/overcastpng.png');
                 }
-                //console.log(result.name);
             },
 
             error: function(error)
@@ -196,17 +166,10 @@
                 $("#nearest").html(hop.toUpperCase());
                 var dis = response.results[0].distance;
                 $("#dist").html("(" + dis + " meters away)")
-                //console.log(response.results[0].name);
-                //console.log(response.results[0].distance);
             }
         });
-        
                 }
             }
            
-            
-            
         });
         matchStates();
-        //console.log("out of func lat: " + lati);
-        //console.log("out of func long: " + longi);

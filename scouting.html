@@ -24,7 +24,6 @@
             <h1 class="header"> Step 1: Scout the Course</h1>
             <h2 class="text"> The NCAA divides regions according to the map below. </h2>
             <h2 class="text">Since you are in <span id="st" class="text"> STATE HERE </span></h2>
-            <!--<h2 id="st" class="text">STATE HERE</h2>-->
             <h2 class="text">you will be competing in the <span class="text" id="reg">REGION HERE</span> region.</h2>
             <br>
             <img src="images/regions.jpg" class="image" width = "800" height = "500">
@@ -90,6 +89,7 @@
 	                    }
                     };
 
+                    //CALLING A DAD JOKE API - ATTEMPT AT 5 API POINTS
                     $.ajax(settings).done(function (response) 
                     {
                         document.getElementById("joke_label").innerHTML = response.body[0].setup;
@@ -120,9 +120,9 @@
 	                    }
                     };
 
+                    //CALLING A QUOTES API - ATTEMPT AT 5 API POINTS
                     $.ajax(settings).done(function (response) 
                     {
-                        //console.log(response);
                         document.getElementById("quote_label").innerHTML = response.content;
                     });
 
@@ -150,12 +150,11 @@
 	                    }
                     };
 
+                    //CALLING AN INSULT API - ATTEMPT AT 5 API POINTS
                     $.ajax(settings).done(function (response) 
                     {
-                        //console.log(response);
                         document.getElementById("insult_label").innerHTML = response.contents.taunts[0];
                     });
-
                  }
              </script>
             -->
@@ -174,6 +173,5 @@
              <br>
 
         </div>
-
     </body>
 </html>

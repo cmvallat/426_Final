@@ -23,10 +23,12 @@
                                 "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", 
                                 "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah",
                                 "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
-          $( "#states" ).autocomplete({
+          $( "#states" ).autocomplete(
+            {
             source: availableStates
-          });
-        } );
+            });
+          } 
+        );
         </script>
       </head>
 
@@ -39,9 +41,11 @@
 
             <img class="image" id="image" src="images/menXC.jpeg" width="800" height="400" alt="Panorama">
 
-            <br> <br>
+            <br><br>
+
             <button onclick="location.href = '/userlogin.html';" id="myButton" class="button" >Login Here</button>      
-          <br> <br>
+            
+            <br> <br>
 
             <h2 class="text" for="states">Which state are you from? Enter below:</h2>
 
@@ -49,8 +53,8 @@
                 <div class="autocomplete" style="width:300px;">
                   <input id="states" type="text" name="myState" placeholder="Your State">
                 </div>
-                <input type="submit" class="button">
-            </form>
+              <input type="submit" class="button">
+             </form>
 
              <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br> <br>  <br>  <br>   
         </div>

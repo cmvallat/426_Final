@@ -18,16 +18,18 @@ const btnSignUp = document.getElementById('btnSignUp');
 const btnLogin = document.getElementById('btnLogin');
 const btnLogout = document.getElementById('btnLogout');
 
-//var log = false;
-//var sign = false;
 
 btnLogin.addEventListener('click', e =>
 {
     const email = txtEmail.value;
     const pass = txtPassword.value;
     const auth = firebase.auth();
-    //log = true;
     const promise = auth.signInWithEmailAndPassword(email, pass);
+
+    //if they are logging in and there is an error, that means one of two things
+    //1. they logged in without an account, or 2. they entered the wrong password
+    //I couldn't find a way to distinguish between the two, so this error message covers both
+
     promise.catch(e => 
         document.getElementById("log").innerHTML = "Oops! An error occurred.");
         document.getElementById("help").className = "text";
@@ -40,9 +42,10 @@ btnSignUp.addEventListener('click', e =>
 {
     const email = txtEmail.value;
     const pass = txtPassword.value;
-    //sign = true;
     const auth = firebase.auth();
     const promise = auth.createUserWithEmailAndPassword(email, pass);
+
+    //error message for signing up with an account that has already been created
     promise.catch(e => 
         document.getElementById("log").innerHTML = "Oops! An error occurred.");
         document.getElementById("help").className = "text";

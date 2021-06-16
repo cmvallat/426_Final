@@ -43,6 +43,7 @@
 }
 
 
+/*sets relative positions of images/obstacles on the page and keyframes to make them move*/
 #hill
 {
     width: 140px;
@@ -201,7 +202,6 @@
 
 /*sets the image of the mouse cursor*/
 #follow {
-    /*cursor: url(http://placehold.it/50x30) 25 15, auto; */
     position: absolute;
     text-align: center;
     border-style: solid;

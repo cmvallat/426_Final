@@ -15,7 +15,8 @@ document.getElementById('red').addEventListener('click',function()
 {
     enterDate = new Date();
     started = true;
-    //console.log("button clicked");
+
+    //make the obstacles move when the start button is clicked
     document.getElementById("hill").style.animationPlayState = "running";
     document.getElementById("opp").style.animationPlayState = "running";
     document.getElementById("apple").style.animationPlayState = "running";
@@ -23,7 +24,7 @@ document.getElementById('red').addEventListener('click',function()
 
 });
 
-//when user runs into an obstacle, get final time
+//when user runs into an obstacle or the finish line, the race is over - get final time
 
 //if user wins
 document.getElementById("finish").onmouseover = function() 
