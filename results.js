@@ -1,3 +1,5 @@
+/*Ignore this file - this functionality was not implemented*/
+
 var StravaApiV3 = 'strava_api_v3';
 var defaultClient = StravaApiV3.ApiClient.instance;
 
