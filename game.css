@@ -38,7 +38,7 @@
     height: 500px;
     border: 1px solid black;
     margin: auto;
-    cursor: url(images/mid.png) 25 15, auto;
+    cursor: url(images/mid2.png) 25 15, auto;
     background-color: #FFFFFF;
 }
 
@@ -76,7 +76,7 @@
     top: 75px;
     left: 850px;
 
-    background-image: url(images/guy_backwards.jpg);
+    background-image: url(images/girlfinal.jpg);
     background-size: 140px 100px;
     border-style: solid;
     border-width: 3px;
